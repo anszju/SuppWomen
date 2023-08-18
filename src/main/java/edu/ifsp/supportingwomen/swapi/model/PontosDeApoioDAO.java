@@ -1,8 +1,8 @@
-package br.edu.ifsp.javafx.aulas.model;
+package edu.ifsp.supportingwomen.swapi.model;
 
 import java.util.ArrayList;
 
-import br.edu.ifsp.javafx.aulas.Database;
+
 
 public class PontosDeApoioDAO {
 
