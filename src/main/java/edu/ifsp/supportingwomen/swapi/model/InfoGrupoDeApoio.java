@@ -1,4 +1,4 @@
-package br.edu.ifsp.javafx.aulas.model;
+package edu.ifsp.supportingwomen.swapi.model;
 
 public class InfoGrupoDeApoio extends Perfil {
     private double avaliacao;

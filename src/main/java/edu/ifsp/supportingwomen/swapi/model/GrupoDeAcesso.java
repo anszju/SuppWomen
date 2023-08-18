@@ -1,4 +1,4 @@
-package br.edu.ifsp.javafx.aulas.model;
+package edu.ifsp.supportingwomen.swapi.model;
 
 public interface GrupoDeAcesso {
     String TEMAGRUPO1 = "Dependencia";
