@@ -9,4 +9,8 @@ public class PontosDeApoioController {
      public String  endPoint1(){
         return "Ana dos brigadeiros";
      }
+    @GetMapping("/AnaJulia")
+    String metodoAnaju(){
+        return "Ana Julia fez esse método ;)";
+    }
 }
