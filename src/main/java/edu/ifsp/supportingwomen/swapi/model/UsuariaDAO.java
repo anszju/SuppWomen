@@ -17,6 +17,7 @@ public class UsuariaDAO {
     public static UsuariaDAO getInstance(){
         if(instance == null){
             instance = new UsuariaDAO();
+            // instance.getConnection();
         }
         return instance;
     }
