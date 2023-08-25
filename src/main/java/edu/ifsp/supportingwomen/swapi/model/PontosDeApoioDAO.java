@@ -2,6 +2,8 @@ package edu.ifsp.supportingwomen.swapi.model;
 
 import java.util.ArrayList;
 
+import edu.ifsp.supportingwomen.swapi.Database;
+
 
 
 public class PontosDeApoioDAO {
@@ -51,3 +53,4 @@ public class PontosDeApoioDAO {
         // Sem implementação
     }
 }
+ 

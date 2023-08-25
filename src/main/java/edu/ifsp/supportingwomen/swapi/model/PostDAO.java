@@ -2,6 +2,8 @@ package edu.ifsp.supportingwomen.swapi.model;
 
 import java.util.ArrayList;
 
+import edu.ifsp.supportingwomen.swapi.Database;
+
 public class PostDAO {
     
     private Database db;

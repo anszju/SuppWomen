@@ -4,6 +4,10 @@ public class PontosDeApoio {
     private String nomePonto;
     private String latitude, longitude;
 
+    
+    public PontosDeApoio() {
+    }
+
     public PontosDeApoio(String nomePonto, String latitude, String longitude) {
         this.nomePonto = nomePonto;
         this.latitude = latitude;
