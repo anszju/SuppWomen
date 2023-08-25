@@ -18,6 +18,9 @@ public class Database {
         posts = new ArrayList<>();
         pontos = new ArrayList<>();
 
+        cadastros.get(0).addPontoDeApoio(pontos.get(0));
+        cadastros.get(0).addPontoDeApoio(pontos.get(1));
+
         pontos.add(new PontosDeApoio("cris", "123", "123"));
         pontos.add(new PontosDeApoio("cris", "123", "123"));
         pontos.add(new PontosDeApoio("cris", "123", "123"));

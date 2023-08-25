@@ -131,6 +131,9 @@ public class Usuaria extends Perfil implements GrupoDeAcesso{
         return "Nome:" + nome + "Redes:" + redes_social + "Apresentação:" + apresentacao + "CPF:" + cpf + "Nascimento:" + nascimento + "Cidade:" + cidade + "rua" + rua+
         "Bairro:" + bairro + "Numero:" + numero + "Estado" + estado + "Email" + email;
     }
+
+    public void addPontoDeApoio(PontosDeApoio pontosDeApoio) {
+    }
 }
 
     
