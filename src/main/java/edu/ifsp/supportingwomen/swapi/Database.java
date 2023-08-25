@@ -21,6 +21,8 @@ public class Database {
         pontos.add(new PontosDeApoio("cris", "123", "123"));
         pontos.add(new PontosDeApoio("cris", "123", "123"));
         pontos.add(new PontosDeApoio("cris", "123", "123"));
+
+        posts.add(new Post("Violência Doméstica", "exemplo", "Violência"));
     }
 
     public void addUsuaria(Usuaria novaUsuaria) {
