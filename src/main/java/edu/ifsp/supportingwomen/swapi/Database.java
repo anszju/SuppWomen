@@ -2,6 +2,7 @@ package edu.ifsp.supportingwomen.swapi;
 
 import java.util.ArrayList;
 
+import edu.ifsp.supportingwomen.swapi.model.Comentario;
 import edu.ifsp.supportingwomen.swapi.model.PontosDeApoio;
 import edu.ifsp.supportingwomen.swapi.model.Post;
 import edu.ifsp.supportingwomen.swapi.model.Usuaria;
@@ -12,11 +13,13 @@ public class Database {
     private static ArrayList<Usuaria> cadastros;
     private static ArrayList<Post> posts;
     private static ArrayList<PontosDeApoio> pontos;
+    private static ArrayList<Comentario> comentarios;
 
     public Database() {
         cadastros = new ArrayList<>();
         posts = new ArrayList<>();
         pontos = new ArrayList<>();
+        comentarios = new ArrayList<>();
 
         pontos.add(new PontosDeApoio("cris", "123", "123"));
         pontos.add(new PontosDeApoio("cris", "123", "123"));
@@ -40,6 +43,10 @@ public class Database {
         pontos.add(novoPonto);
     }
 
+    public void addComentario(Comentario novoComentario){
+        comentarios.add(novoComentario);
+    }
+
     public static ArrayList<Usuaria> getCadastros() {
         return cadastros;
     }
@@ -51,5 +58,11 @@ public class Database {
     public static ArrayList<PontosDeApoio> getPontos() {
         return pontos;
     }
+
+    public static ArrayList<Comentario> getComentarios() {
+        return comentarios;
+    }
+
+    
 
 }
