@@ -2,8 +2,11 @@ package edu.ifsp.supportingwomen.swapi.model;
 
 import java.util.ArrayList;
 
+import org.springframework.stereotype.Component;
+
 import edu.ifsp.supportingwomen.swapi.Database;
 
+@Component
 public class UsuariaDAO {
 
     private Database db;
@@ -11,6 +14,8 @@ public class UsuariaDAO {
     public static ArrayList<Usuaria> cadastros = Database.getCadastros();
     
     private UsuariaDAO(){
+        db = new Database();
+        cadastros = db.getCadastros();
     }
 
     
