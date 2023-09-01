@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 
 public class Usuaria extends Perfil implements GrupoDeAcesso{
+    public static String getApresentacao;
     private String cpf;
     private String nascimento;
     private String cidade;

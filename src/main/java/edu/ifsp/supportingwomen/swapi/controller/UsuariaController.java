@@ -3,7 +3,9 @@ package edu.ifsp.supportingwomen.swapi.controller;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,5 +29,11 @@ public class UsuariaController{
         UsuariaDAO usuariaDAO = UsuariaDAO.getInstance();
         usuariaDAO.create(novaUsuaria);
         
+    }
+    @PutMapping("/suppwomen/cadastro")
+    public Usuaria atualizaCad(@RequestBody Usuaria updateCad) {
+        UsuariaDAO usuariaDAO = new UsuariaDAO();
+        usuariaDAO.update(updateCad);
+        return updateCad;
     }
 }

@@ -26,5 +26,4 @@ public class PontosDeApoioController {
         return PontosDeApoioDAO.getInstance().read();
     }
 
-    
 }

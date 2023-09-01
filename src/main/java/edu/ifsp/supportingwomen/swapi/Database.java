@@ -21,9 +21,6 @@ public class Database {
         pontos = new ArrayList<>();
         comentarios = new ArrayList<>();
 
-        cadastros.get(0).addPontoDeApoio(pontos.get(0));
-        cadastros.get(0).addPontoDeApoio(pontos.get(1));
-
         pontos.add(new PontosDeApoio("cris", "123", "123"));
         pontos.add(new PontosDeApoio("cris", "123", "123"));
         pontos.add(new PontosDeApoio("cris", "123", "123"));
@@ -32,6 +29,9 @@ public class Database {
         cadastros.add(new Usuaria("Maria Carla", "@mmaria", "Meu nome é Maria e tenho 20 anos.", "214.589.745-88", "20/04/2003", "Bragança Paulista", "Rua José Maia", "Matadouro", 25, "São Paulo", "maria@gmail.com"));
         cadastros.add(new Usuaria("Paula Maria", "@paulaM", "Meu nome é Paula e tenho 20 anos.", "214.621.745-84", "19/04/2003", "Joãonópolis", "Rua Piracaia", "Mato dourado", 24, "São Paulo", "aula@gmail.com"));
         cadastros.add(new Usuaria("Fernada Lua", "@Fernandinha", "Meu nome é Fernanda e tenho 20 anos.", "211.589.745-98", "18/04/2003", "Perdões", "Rua São Paulo", "Mato prata", 212, "São Paulo", "fernanda@gmail.com"));
+        
+        cadastros.get(0).addPontoDeApoio(pontos.get(0));
+        cadastros.get(0).addPontoDeApoio(pontos.get(1));
     }
 
     public void addUsuaria(Usuaria novaUsuaria) {
@@ -67,5 +67,16 @@ public class Database {
     }
 
     
+
+    public static void updateUsuaria (String cpf, String novaRedesSocial, String novaApresentacao, String novoEmail){
+        for(Usuaria usu : cadastros){
+            if(usu.getCpf().equals(cpf)){
+                usu.setRedes_social(novaRedesSocial);
+                usu.setApresentacao(novaApresentacao);
+                usu.setEmail(novoEmail);
+            }
+        }
+    }
+
 
 }
