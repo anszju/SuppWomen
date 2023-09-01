@@ -49,5 +49,18 @@ public class UsuariaDAO {
     public void update(Usuaria toUpdate){
         // Sem implementação
     }
-      
+
+
+    public Usuaria encontraCpf(String cpf) {
+        for (Usuaria usuariaA : cadastros) {
+            if (usuariaA.getCpf().equals(cpf)) {
+                return usuariaA;
+            }
+        }
+        return null;
+    }
+    
+    public void deleteUsuaria(Usuaria usuariaDeletar) {
+        cadastros.remove(usuariaDeletar);
+    }
 }
