@@ -68,6 +68,12 @@ public class Database {
         return comentarios;
     }
 
-    
-
+    public static void updatePost (String titulo, String novoConteudo, String novaTag){
+        for (Post post : posts) {
+            if(post.getTitulo().equals(titulo)){
+                post.setConteudo(novoConteudo);
+                post.setTag(novaTag);
+            }
+        }
+    }
 }

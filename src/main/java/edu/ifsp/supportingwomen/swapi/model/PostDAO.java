@@ -14,7 +14,7 @@ public class PostDAO {
     // public static ArrayList<Post> posts = Database.getPosts();
 
     // O construtor privado garante que uma única instância irá existir
-    private PostDAO(){
+    public PostDAO(){
        db = new Database();
     //    posts = db.getPosts();
     }
@@ -52,9 +52,6 @@ public class PostDAO {
         // Sem implementação
     }
 
-    public void update(Post toUpdate){
-        // Sem implementação
-    }
 
 	public Post encontraPost(String titulo) {
 		for (Post postE : db.getPosts()) {
@@ -71,5 +68,10 @@ public class PostDAO {
 
     public void deletePost(Post postDeletar) {
         db.getPosts().remove(postDeletar);
+    }
+
+    public void update(Post postA){
+        Database db = getConnection();
+        db.updatePost(postA.getTitulo(), postA.getConteudo(), postA.getTag());
     }
 }
