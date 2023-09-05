@@ -34,6 +34,10 @@ public class Database {
         posts.add(new Post("Violência Doméstica", "exemplo1", "Violência"));
         posts.add(new Post("Violência Física", "exemplo2", "Violência"));
         posts.add(new Post("Violência Moral", "exemplo3", "Violência"));
+
+        comentarios.add(new Comentario("anaA", "flor de liz grupos1", "m exemplo1"));
+        comentarios.add(new Comentario("anaB", "flor de liz grupos2", "m exemplo2"));
+        comentarios.add(new Comentario("anaC", "flor de liz grupos3", "m exemplo3"));
     }
 
     public void addUsuaria(Usuaria novaUsuaria) {
