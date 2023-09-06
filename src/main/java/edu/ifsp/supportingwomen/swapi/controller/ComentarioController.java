@@ -22,9 +22,15 @@ public class ComentarioController {
         comentarioDAO.create(novoComentario);
     }
 
+    //get comentarios - isablly
     @GetMapping("/suppwomen/comentarios")
     List<Comentario> mostrarcomentarios(){
         return ComentarioDAO.getInstance().read();
     }
+    
+    // @GetMapping("/suppwomen/comentarios")
+    // List<Comentario> mostrarcomentarios(){
+    //     return ComentarioDAO.getInstance().read();
+    // }
 
 }
