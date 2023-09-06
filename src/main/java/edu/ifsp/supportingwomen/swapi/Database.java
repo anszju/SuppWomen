@@ -30,7 +30,6 @@ public class Database {
         cadastros.add(new Usuaria("Paula Maria", "@paulaM", "Meu nome é Paula e tenho 20 anos.", "214.621.745-84", "19/04/2003", "Joãonópolis", "Rua Piracaia", "Mato dourado", 24, "São Paulo", "aula@gmail.com"));
         cadastros.add(new Usuaria("Fernada Lua", "@Fernandinha", "Meu nome é Fernanda e tenho 20 anos.", "211.589.745-98", "18/04/2003", "Perdões", "Rua São Paulo", "Mato prata", 212, "São Paulo", "fernanda@gmail.com"));
 
-
         posts.add(new Post("Violência Doméstica", "exemplo1", "Violência"));
         posts.add(new Post("Violência Física", "exemplo2", "Violência"));
         posts.add(new Post("Violência Moral", "exemplo3", "Violência"));
@@ -80,4 +79,18 @@ public class Database {
             }
         }
     }
+    
+
+    public static void updateUsuaria (String cpf, String novaRedesSocial, String novaApresentacao, String novoEmail){
+        for(Usuaria usu : cadastros){
+            if(usu.getCpf().equals(cpf)){
+                usu.setRedes_social(novaRedesSocial);
+                usu.setApresentacao(novaApresentacao);
+                usu.setEmail(novoEmail);
+            }
+        }
+    }
+
+
+
 }

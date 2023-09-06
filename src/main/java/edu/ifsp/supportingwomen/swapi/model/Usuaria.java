@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 
 public class Usuaria extends Perfil implements GrupoDeAcesso{
+    public static String getApresentacao;
     private String cpf;
     private String nascimento;
     private String cidade;
@@ -130,6 +131,9 @@ public class Usuaria extends Perfil implements GrupoDeAcesso{
     public String toString() {
         return "Nome:" + nome + "Redes:" + redes_social + "Apresentação:" + apresentacao + "CPF:" + cpf + "Nascimento:" + nascimento + "Cidade:" + cidade + "rua" + rua+
         "Bairro:" + bairro + "Numero:" + numero + "Estado" + estado + "Email" + email;
+    }
+
+    public void addPontoDeApoio(PontosDeApoio pontosDeApoio) {
     }
 }
 

@@ -13,11 +13,10 @@ public class UsuariaDAO {
     private static UsuariaDAO instance;
     public static ArrayList<Usuaria> cadastros = Database.getCadastros();
     
-    private UsuariaDAO(){
+    public UsuariaDAO(){
         db = new Database();
         cadastros = db.getCadastros();
     }
-
     
     public static UsuariaDAO getInstance(){
         if(instance == null){
@@ -51,8 +50,11 @@ public class UsuariaDAO {
         // Sem implementação
     }
 
-    public void update(Usuaria toUpdate){
-        // Sem implementação
+    public void update(Usuaria usuN){
+        // Database db = new Database();
+        Database db = getConnection();
+        db.updateUsuaria(usuN.getCpf(), usuN.getApresentacao(), usuN.getRedes_social(), usuN.getEmail());
+
     }
 
 
