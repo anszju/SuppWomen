@@ -2,17 +2,21 @@ package edu.ifsp.supportingwomen.swapi.model;
 
 import java.util.ArrayList;
 
-import edu.ifsp.supportingwomen.swapi.Database;
+import org.springframework.stereotype.Component;
 
+import edu.ifsp.supportingwomen.swapi.Database;
+ 
+@Component
 public class PostDAO {
     
     private Database db;
     private static PostDAO instance;
-    public static ArrayList<Post> posts = Database.getPosts();
+    // public static ArrayList<Post> posts = Database.getPosts();
 
     // O construtor privado garante que uma única instância irá existir
-    private PostDAO(){
-       
+    public PostDAO(){
+       db = new Database();
+    //    posts = db.getPosts();
     }
 
     // Recupera a única instância do DAO
@@ -48,7 +52,26 @@ public class PostDAO {
         // Sem implementação
     }
 
-    public void update(Post toUpdate){
-        // Sem implementação
+
+	public Post encontraPost(String titulo) {
+		for (Post postE : db.getPosts()) {
+            System.out.println(titulo);
+            System.out.println(postE.getTitulo());
+            System.out.println("--------");
+
+            if(postE.getTitulo().equals(titulo)){
+                return postE;
+            }
+        }
+        return null;
+	}
+
+    public void deletePost(Post postDeletar) {
+        db.getPosts().remove(postDeletar);
+    }
+
+    public void update(Post postA){
+        Database db = getConnection();
+        db.updatePost(postA.getTitulo(), postA.getConteudo(), postA.getTag());
     }
 }
