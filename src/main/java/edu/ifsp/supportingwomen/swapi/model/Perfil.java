@@ -5,6 +5,10 @@ public abstract class Perfil {
     protected String nome;
     protected String redes_social;
     protected String apresentacao;
+
+public Perfil(){
+    
+}
    
     public Perfil(String nome, String redes_social, String apresentacao) {
         this.nome = nome;

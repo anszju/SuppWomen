@@ -23,11 +23,11 @@ public class ComentarioController {
         return comentarioRepository.save(comentario);
     }
 
-    // //get comentarios - isablly
-    // @GetMapping("/suppwomen/comentarios")
-    // List<Comentario> mostrarcomentarios(){
-    //     return ComentarioDAO.getInstance().read();
-    // }
+  
+    @GetMapping("/suppwomen/comentarios")
+    public List<Comentario> mostrarcomentarios(){
+        return(List<Comentario>) comentarioRepository.findAll();
+    }
     
     
 

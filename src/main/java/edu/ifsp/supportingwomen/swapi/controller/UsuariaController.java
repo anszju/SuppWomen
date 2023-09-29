@@ -25,31 +25,15 @@ public class UsuariaController{
         return (List<Usuaria>)usuariaRepository.findAll();
     }
 
-    // @PostMapping("/suppwomen/cadastro")
-    // public void cadastro(
-    //     @RequestBody
-    //     Usuaria novaUsuaria
-    // ){
-    //     // UsuariaDAO.getInstance().cadastros.add(novaUsuaria);
-    //     UsuariaDAO usuariaDAO = UsuariaDAO.getInstance();
-    //     usuariaDAO.create(novaUsuaria);
-        
-    // }
-    //  @Autowired
-    // private UsuariaDAO usuariaD = UsuariaDAO.getInstance();
+    @PostMapping("/suppwomen/cadastro")
+    public Usuaria cadastro(@RequestBody Usuaria novaUsuaria){
+        return usuariaRepository.save(novaUsuaria);
+    }
 
-    // @DeleteMapping("/suppwomen/deletaconta/{cpf}")
-    // public String deletarCadastro (@PathVariable("cpf") String cpf){
-    //     Usuaria usuariaDeletar = usuariaD.encontraCpf(cpf);
-
-        
-    //     if(usuariaDeletar != null){
-    //         usuariaD.deleteUsuaria(usuariaDeletar);
-    //         return "Cadastro deletado com sucesso.";
-    //     }else{
-    //         return "Cadastro não encontrado.";
-    //     }
-    // }
+    @DeleteMapping("/suppwomen/deletaConta/{id}")
+    public void deletarCadastro (@PathVariable("id") Long id){
+       usuariaRepository.deleteById(id);
+    }
 
     // @PutMapping("/suppwomen/cadastro")
     // public Usuaria atualizaCad(@RequestBody Usuaria updateCad) {

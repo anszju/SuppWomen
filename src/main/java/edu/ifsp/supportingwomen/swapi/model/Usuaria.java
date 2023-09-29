@@ -22,6 +22,9 @@ public class Usuaria extends Perfil implements GrupoDeAcesso{
     private String estado;
     private String email;
     private ArrayList<String> tagsGrupos;
+
+    public Usuaria(){
+    }
     
     public Usuaria(Long id, String nome, String redes_social, String apresentacao, String cpf, String nascimento, String cidade,
             String rua, String bairro, int numero, String estado, String email) {

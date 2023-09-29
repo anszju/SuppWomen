@@ -44,11 +44,5 @@ public class PostController {
         postRepository.deleteById(id);
 
     }
-    // //mantém o título para dar o put, modifica o conteudo e a tag
-    // @PutMapping("/suppwomen/attpost")
-    // public Post attPost (@PathParam("titulo") String titulo, @RequestBody Post novoPost){
-    //     PostDAO postDAO = new PostDAO();
-    //     postDAO.update(novoPost);
-    //     return novoPost;
-    // }
+    
 }
