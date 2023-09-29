@@ -1,16 +1,11 @@
 package edu.ifsp.supportingwomen.swapi.controller;
 
-import java.util.List;
-
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.ifsp.supportingwomen.swapi.model.Usuaria;
-
 import edu.ifsp.supportingwomen.swapi.repository.UsuariaRepository;
 
 @RestController
@@ -32,15 +27,6 @@ public class UsuariaController{
     //     UsuariaDAO usuariaDAO = UsuariaDAO.getInstance();
     //     usuariaDAO.create(novaUsuaria);
         
-<<<<<<< HEAD
-    }
-    @PutMapping("/suppwomen/cadastro")
-    public Usuaria atualizaCad(@RequestBody Usuaria updateCad) {
-        UsuariaDAO usuariaDAO = new UsuariaDAO();
-        usuariaDAO.update(updateCad);
-        return updateCad;
-    }
-=======
     // }
     //  @Autowired
     // private UsuariaDAO usuariaD = UsuariaDAO.getInstance();
@@ -58,11 +44,8 @@ public class UsuariaController{
     //     }
     // }
 
-    // @PutMapping("/suppwomen/cadastro")
-    // public Usuaria atualizaCad(@RequestBody Usuaria updateCad) {
-    //     UsuariaDAO usuariaDAO = new UsuariaDAO();
-    //     usuariaDAO.update(updateCad);
-    //     return updateCad;
-    // }
->>>>>>> 5b727a6 (alteração inicial classes)
+    @PutMapping("/suppwomen/cadastro")
+    public Usuaria atualizaCad(@RequestBody Usuaria updateCad) {
+        return usuariaRepository.save(updateCad);
+    }
 }
