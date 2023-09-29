@@ -40,9 +40,10 @@ public class PostController {
     // private PostDAO postD = PostDAO.getInstance();
 
     @DeleteMapping("/suppwomen/deletapost/{id}")
-    public void deletarPost (Long id){
+    public void deletarPost (@PathVariable("id") Long id){
         postRepository.deleteById(id);
 
     }
+
     
 }
