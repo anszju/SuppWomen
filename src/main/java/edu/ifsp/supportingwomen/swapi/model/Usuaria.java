@@ -2,8 +2,16 @@ package edu.ifsp.supportingwomen.swapi.model;
 
 import java.util.ArrayList;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
+@Entity
 public class Usuaria extends Perfil implements GrupoDeAcesso{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     public static String getApresentacao;
     private String cpf;
     private String nascimento;
@@ -15,9 +23,10 @@ public class Usuaria extends Perfil implements GrupoDeAcesso{
     private String email;
     private ArrayList<String> tagsGrupos;
     
-    public Usuaria(String nome, String redes_social, String apresentacao, String cpf, String nascimento, String cidade,
+    public Usuaria(Long id, String nome, String redes_social, String apresentacao, String cpf, String nascimento, String cidade,
             String rua, String bairro, int numero, String estado, String email) {
         super(nome, redes_social, apresentacao);
+        this.id = id;
         this.cpf = cpf;
         this.nascimento = nascimento;
         this.cidade = cidade;
@@ -58,6 +67,14 @@ public class Usuaria extends Perfil implements GrupoDeAcesso{
 
     public String getCidade() {
         return cidade;
+    }
+    
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setCidade(String cidade) {
