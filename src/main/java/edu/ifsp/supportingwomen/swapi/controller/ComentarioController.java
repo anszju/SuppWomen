@@ -16,14 +16,12 @@ public class ComentarioController {
     @Autowired
     ComentarioRepository comentarioRepository;
     
-    // @PostMapping("/suppwomen/criacomentario")
-    // public void cadastro(
-    //     @RequestBody
-    //     Comentario novoComentario
-    // ){
-    //     ComentarioDAO comentarioDAO = ComentarioDAO.getInstance();
-    //     comentarioDAO.create(novoComentario);
-    // }
+    @PostMapping("/suppwomen/criacomentario")
+    public Comentario createPost(
+        @RequestBody Comentario comentario 
+    ){
+        return comentarioRepository.save(comentario);
+    }
 
     // //get comentarios - isablly
     // @GetMapping("/suppwomen/comentarios")

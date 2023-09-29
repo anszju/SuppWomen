@@ -39,18 +39,11 @@ public class PostController {
     // @Autowired
     // private PostDAO postD = PostDAO.getInstance();
 
-    // @DeleteMapping("/suppwomen/deletapost")
-    // public String deletarPost (@PathParam("titulo") String titulo){
-    //     Post postDeletar = postD.encontraPost(titulo);
+    @DeleteMapping("/suppwomen/deletapost/{id}")
+    public void deletarPost (Long id){
+        postRepository.deleteById(id);
 
-        // if(postDeletar != null){
-        //     postD.deletePost(postDeletar);
-        //     return "Post deletado com sucesso.";
-        // }else{
-        //     return "Post não encontrado.";
-        // }
-
-    // }
+    }
     // //mantém o título para dar o put, modifica o conteudo e a tag
     // @PutMapping("/suppwomen/attpost")
     // public Post attPost (@PathParam("titulo") String titulo, @RequestBody Post novoPost){

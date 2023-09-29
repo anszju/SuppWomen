@@ -20,10 +20,10 @@ public class UsuariaController{
     @Autowired
     UsuariaRepository usuariaRepository;
 
-    // @GetMapping("/suppwomen/listacadastros")
-    // List<Usuaria> mostrarCadastros(){
-    //     return UsuariaDAO.getInstance().read();
-    // }
+    @GetMapping("/suppwomen/listacadastros")
+    public List<Usuaria> mostrarCadastros(){
+        return (List<Usuaria>)usuariaRepository.findAll();
+    }
 
     // @PostMapping("/suppwomen/cadastro")
     // public void cadastro(
