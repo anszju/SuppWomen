@@ -29,6 +29,19 @@ public class ComentarioController {
         return(List<Comentario>) comentarioRepository.findAll();
     }
     
-    
+    // @PostMapping("/suppwomen/criacomentario")
+    // public void cadastro(
+    //     @RequestBody
+    //     Comentario novoComentario
+    // ){
+    //     ComentarioDAO comentarioDAO = ComentarioDAO.getInstance();
+    //     comentarioDAO.create(novoComentario);
+    // }
+
+    // //get comentarios - isablly
+    // @GetMapping("/suppwomen/comentarios")
+    // List<Comentario> mostrarcomentarios(){
+    //     return ComentarioDAO.getInstance().read();
+    // }
 
 }
