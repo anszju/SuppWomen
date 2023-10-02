@@ -17,6 +17,7 @@ import edu.ifsp.supportingwomen.swapi.repository.PontosDeApoioRepository;
 @RestController
 public class PontosDeApoioController {
     @Autowired
+    public
     PontosDeApoioRepository pontosDeApoioRepository;
 
     @PostMapping("/suppwomen/pontos")
@@ -28,5 +29,4 @@ public class PontosDeApoioController {
     List<PontosDeApoio> exibePonto(){
         return (List<PontosDeApoio>)pontosDeApoioRepository.findAll();
     }
-
 }
