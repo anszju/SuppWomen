@@ -1,18 +1,16 @@
 package edu.ifsp.supportingwomen.swapi.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
 import edu.ifsp.supportingwomen.swapi.model.Usuaria;
-
 import edu.ifsp.supportingwomen.swapi.repository.UsuariaRepository;
 
 @RestController
@@ -35,10 +33,10 @@ public class UsuariaController{
        usuariaRepository.deleteById(id);
     }
 
-    // @PutMapping("/suppwomen/cadastro")
-    // public Usuaria atualizaCad(@RequestBody Usuaria updateCad) {
-    //     UsuariaDAO usuariaDAO = new UsuariaDAO();
-    //     usuariaDAO.update(updateCad);
-    //     return updateCad;
-    // }
+    @PutMapping("/suppwomen/cadastro/{id}")
+    public Usuaria atualizaCad(@RequestBody Usuaria updateCad, @PathVariable("id") Long id) {
+      usuariaRepository.findById(id);
+      return   usuariaRepository.save(updateCad);
+       
+    }
 }

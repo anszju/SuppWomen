@@ -29,6 +29,5 @@ public class ComentarioController {
         return(List<Comentario>) comentarioRepository.findAll();
     }
     
-    
 
 }

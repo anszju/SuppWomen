@@ -5,6 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import edu.ifsp.supportingwomen.swapi.model.PontosDeApoio;
 
 public interface PontosDeApoioRepository extends CrudRepository<PontosDeApoio, Long>{
-    void deleteById(Long id);
     
 }

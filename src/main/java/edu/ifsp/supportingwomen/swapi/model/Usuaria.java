@@ -2,6 +2,7 @@ package edu.ifsp.supportingwomen.swapi.model;
 
 import java.util.ArrayList;
 
+import edu.ifsp.supportingwomen.swapi.repository.UsuariaRepository;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,7 +13,9 @@ public class Usuaria extends Perfil implements GrupoDeAcesso{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    public static String getApresentacao;
+    public String nome;
+    public String redes_social;
+    public String apresentacao;
     private String cpf;
     private String nascimento;
     private String cidade;
@@ -25,10 +28,12 @@ public class Usuaria extends Perfil implements GrupoDeAcesso{
 
     public Usuaria(){
     }
-    
     public Usuaria(Long id, String nome, String redes_social, String apresentacao, String cpf, String nascimento, String cidade,
             String rua, String bairro, int numero, String estado, String email) {
         super(nome, redes_social, apresentacao);
+        this.nome = nome;
+        this.apresentacao = apresentacao;
+        this.redes_social = redes_social;
         this.id = id;
         this.cpf = cpf;
         this.nascimento = nascimento;
@@ -86,6 +91,30 @@ public class Usuaria extends Perfil implements GrupoDeAcesso{
 
     public String getRua() {
         return rua;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getRedes_social() {
+        return redes_social;
+    }
+
+    public void setRedes_social(String redes_social) {
+        this.redes_social = redes_social;
+    }
+
+    public String getApresentacao() {
+        return apresentacao;
+    }
+
+    public void setApresentacao(String apresentacao) {
+        this.apresentacao = apresentacao;
     }
 
     public void setRua(String rua) {
@@ -155,6 +184,9 @@ public class Usuaria extends Perfil implements GrupoDeAcesso{
 
     public void addPontoDeApoio(PontosDeApoio pontosDeApoio) {
     }
+
+
+
 }
 
     
