@@ -29,4 +29,9 @@ public class PontosDeApoioController {
     List<PontosDeApoio> exibePonto(){
         return (List<PontosDeApoio>)pontosDeApoioRepository.findAll();
     }
+
+    @DeleteMapping("/suppwomen/deletaponto/{id}")
+    public void deletarPonto (@PathVariable("id") Long id){
+        pontosDeApoioRepository.deleteById(id);
+    }
 }

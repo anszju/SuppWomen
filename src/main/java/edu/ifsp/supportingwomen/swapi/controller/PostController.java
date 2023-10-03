@@ -19,6 +19,16 @@ public class PostController {
     @Autowired 
     PostRepository postRepository;
 
+    @PostMapping("/suppwomen/posts/")
+    public Post cadastraPost(@RequestBody Post novoPost){
+        return postRepository.save(novoPost);
+    }
+
+    @GetMapping("/suppwomen/posts/")
+    public List<Post> exibePosts(){
+        return (List<Post>)postRepository.findAll;
+    }
+
     @DeleteMapping("/suppwomen/deletapost/{id}")
     public void deletarPost (@PathVariable("id") Long id){
         postRepository.deleteById(id);
