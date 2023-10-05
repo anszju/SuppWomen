@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import edu.ifsp.supportingwomen.swapi.repository.PostRepository;
-
+import edu.ifsp.supportingwomen.swapi.model.Post;
 
 @RestController
 
@@ -26,7 +26,7 @@ public class PostController {
 
     @GetMapping("/suppwomen/posts/")
     public List<Post> exibePosts(){
-        return (List<Post>)postRepository.findAll;
+        return (List<Post>)postRepository.findAll();
     }
 
     @DeleteMapping("/suppwomen/deletapost/{id}")
