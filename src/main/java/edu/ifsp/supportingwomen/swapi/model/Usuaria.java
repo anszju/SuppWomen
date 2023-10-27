@@ -24,12 +24,13 @@ public class Usuaria extends Perfil implements GrupoDeAcesso{
     private int numero;
     private String estado;
     private String email;
+    private String senha;
     private ArrayList<String> tagsGrupos;
 
     public Usuaria(){
     }
     public Usuaria(Long id, String nome, String redes_social, String apresentacao, String cpf, String nascimento, String cidade,
-            String rua, String bairro, int numero, String estado, String email) {
+            String rua, String bairro, int numero, String estado, String email, String senha) {
         super(nome, redes_social, apresentacao);
         this.nome = nome;
         this.apresentacao = apresentacao;
@@ -43,9 +44,16 @@ public class Usuaria extends Perfil implements GrupoDeAcesso{
         this.numero = numero;
         this.estado = estado;
         this.email = email;
+        this.senha = senha;
         this.tagsGrupos = new ArrayList<>();
     }
 
+    public String getSenha() {
+        return senha;
+    }
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
     public void addGrupo(String grupo){
         tagsGrupos.add(grupo);
     }
