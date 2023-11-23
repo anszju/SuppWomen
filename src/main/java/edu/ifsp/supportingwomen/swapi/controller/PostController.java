@@ -1,6 +1,8 @@
 package edu.ifsp.supportingwomen.swapi.controller;
 
 import java.util.List;
+import java.util.Optional;
+
 import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -27,6 +29,11 @@ public class PostController {
     @GetMapping("/suppwomen/posts/")
     public List<Post> exibePosts(){
         return (List<Post>)postRepository.findAll();
+    }
+
+    @GetMapping("/suppwomen/posts/{id}")
+    public Optional<Post> exibePostId(@PathVariable("id") Long id){
+        return postRepository.findById(id);
     }
 
     @DeleteMapping("/suppwomen/deletapost/{id}")
