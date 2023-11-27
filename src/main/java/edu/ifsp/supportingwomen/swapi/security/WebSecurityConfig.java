@@ -12,43 +12,65 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
+import edu.ifsp.supportingwomen.swapi.security.service.UsuariaDetailService;
+
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig {
-    // Dentro de WebSecurityConfig
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http
-                .requiresChannel(
-                        channel -> channel.anyRequest().requiresSecure())
-                .csrf().disable() // Necessário para permitir acesso ao POST
-                .httpBasic(Customizer.withDefaults())
-                .authorizeHttpRequests(
-                        authorize -> authorize.requestMatchers(HttpMethod.GET, "/suppwomen/comentarios").permitAll()
-                                .requestMatchers(HttpMethod.GET, "/suppwomen/posts/").permitAll()
-                                .requestMatchers(HttpMethod.GET, "/suppwomen/posts/{id}").permitAll()
-                                .requestMatchers(HttpMethod.POST, "/suppwomen/cadastro").permitAll())
-                .authorizeHttpRequests(
-                        authorize -> authorize.requestMatchers(HttpMethod.POST, "/suppwomen/pontos").authenticated()
-                                .requestMatchers(HttpMethod.POST, "/suppwomen/criacomentario").authenticated()
-                                .requestMatchers(HttpMethod.GET, "/suppwomen/pontos").authenticated()
-                                .requestMatchers(HttpMethod.DELETE, "/suppwomen/deletaponto/{id}").authenticated()
-                                .requestMatchers(HttpMethod.DELETE, "/suppwomen/deletapost/{id}").authenticated()
-                                .requestMatchers(HttpMethod.POST, "/suppwomen/posts/").authenticated()
-                                .requestMatchers(HttpMethod.DELETE, "/suppwomen/deletaConta/{id}").authenticated()
-                                .requestMatchers(HttpMethod.GET, "/suppwomen/listacadastros").authenticated()
-                                .requestMatchers(HttpMethod.GET, "/suppwomen/cadastro/{id}").authenticated());
-        return http.build();
-    }
+        // Dentro de WebSecurityConfig
+        @Bean
+        public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+                http
+                                .requiresChannel(
+                                                channel -> channel.anyRequest().requiresSecure())
+                                .csrf().disable() // Necessário para permitir acesso ao POST
+                                .httpBasic(Customizer.withDefaults())
+                                .authorizeHttpRequests(
+                                                authorize -> authorize
+                                                                .requestMatchers(HttpMethod.GET,
+                                                                                "/suppwomen/comentarios")
+                                                                .permitAll()
+                                                                .requestMatchers(HttpMethod.GET, "/suppwomen/posts/")
+                                                                .permitAll()
+                                                                .requestMatchers(HttpMethod.GET,
+                                                                                "/suppwomen/posts/{id}")
+                                                                .permitAll()
+                                                                .requestMatchers(HttpMethod.POST, "/suppwomen/cadastro")
+                                                                .permitAll())
+                                .authorizeHttpRequests(
+                                                authorize -> authorize
+                                                                .requestMatchers(HttpMethod.POST, "/suppwomen/pontos")
+                                                                .authenticated()
+                                                                .requestMatchers(HttpMethod.POST,
+                                                                                "/suppwomen/criacomentario")
+                                                                .authenticated()
+                                                                .requestMatchers(HttpMethod.GET, "/suppwomen/pontos")
+                                                                .authenticated()
+                                                                .requestMatchers(HttpMethod.DELETE,
+                                                                                "/suppwomen/deletaponto/{id}")
+                                                                .authenticated()
+                                                                .requestMatchers(HttpMethod.DELETE,
+                                                                                "/suppwomen/deletapost/{id}")
+                                                                .authenticated()
+                                                                .requestMatchers(HttpMethod.POST, "/suppwomen/posts/")
+                                                                .authenticated()
+                                                                .requestMatchers(HttpMethod.DELETE,
+                                                                                "/suppwomen/deletaConta/{id}")
+                                                                .authenticated()
+                                                                .requestMatchers(HttpMethod.GET,
+                                                                                "/suppwomen/listacadastros")
+                                                                .authenticated()
+                                                                .requestMatchers(HttpMethod.GET,
+                                                                                "/suppwomen/cadastro/{id}")
+                                                                .authenticated());
+                return http.build();
+        }
 
-    // Dentro de WebSecurityConfig
-    @Bean
-    public UserDetailsService userDetailsService() {
-        UserDetails user = User.withDefaultPasswordEncoder()
-                .username("ifsp")
-                .password("1234")
-                .build();
+        // Dentro de WebSecurityConfig
+        @Bean
+        public UserDetailsService myUserDetailsService() {
+                // Retorna o Serviço de Detalhes de Usuario criado por nós!
+                return new UsuariaDetailService();
+        }
 
-        return new InMemoryUserDetailsManager(user);
-    }
 }
